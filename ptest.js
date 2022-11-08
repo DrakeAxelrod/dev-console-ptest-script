@@ -329,4 +329,16 @@
     }
   }
 
+  // eval that tells you the arguments
+  window.ptest.eval = eval;
+  eval = function(){
+    console.log(arguments) && window.ptest.eval(...arguments);
+  }
+  // sql injection trick
+  window.ptest.sqllogintrick = (username_ele_id, password_ele_id, submit_ele_id, username_replace="asdf", password_replace="pwd form") => {
+    document.getElementById(username_ele_id) = username_replace // or 1=1 or 1=1 or 1=1 or ‘a’=’a”;
+    document.getElementById(password_ele_id) = password_replace;
+    document.getElementById(submit_ele_id).click();
+  }
+
 })(window)
