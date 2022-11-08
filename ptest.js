@@ -1,3 +1,16 @@
+// document.write("<script src='https://raw.githubusercontent.com/DrakeAxelrod/dev-console-ptest-script/main/ptest.js'></script>");
+const script = document.createElement("script")
+script.type = "text/javascript"
+script.src = "https://raw.githubusercontent.com/DrakeAxelrod/dev-console-ptest-script/main/ptest.js"
+document.head.appendChild(script)
+eval(script)
+fetch("https://raw.githubusercontent.com/DrakeAxelrod/dev-console-ptest-script/main/ptest.js")
+  .then((response) => response.text())
+  .then((text) => eval(text))
+  .then(() => {
+    /* Use jQuery */ $("div").css("border", "3px dotted orange")
+  })
+
 const ptest = {}
 
 ptest.save = (data, filename) => {
@@ -324,3 +337,5 @@ ptest.cookies = () => {
     console.warn("document.cookie is empty!")
   }
 }
+
+module.exports = ptest
