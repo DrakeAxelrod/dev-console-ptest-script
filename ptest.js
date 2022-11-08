@@ -1,6 +1,6 @@
 // run this to import this file into dev console
 // (async () => {
-//   let response = await fetch();
+//   let response = await fetch("https://raw.githubusercontent.com/DrakeAxelrod/dev-console-ptest-script/main/ptest.js");
 //   let script = await response.text();
 //   eval(script);
 // })();
@@ -30,3 +30,5 @@ ptest.save = (data, filename) => {
   e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
   a.dispatchEvent(e)
 }
+
+return ptest
